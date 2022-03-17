@@ -1,9 +1,9 @@
 import React from "react";
 import "./SingleCard.css";
 
-export default function SingleCard({ image, choice, flipped }) {
+export default function SingleCard({ image, choice, flipped, disabled }) {
   const handleClick = () => {
-    choice(image);
+    if (!disabled) choice(image);
   };
   return (
     <div className="card">
