@@ -10,6 +10,12 @@ const cardImages = [
 ];
 
 function App() {
+  const shuffleCards = () => {
+    const shuffledCards = [...cardImages, ...cardImages]
+      .sort(() => 0.5 - Math.random())
+      .map((card) => ({ ...card, id: Math.random() }));
+  };
+
   return (
     <div className="App">
       <h1>Magic Match</h1>
